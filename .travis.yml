@@ -1,0 +1,12 @@
+language: python
+python: "2.7"
+branches:
+  except:
+    - release
+    - hotfix
+
+
+script:
+  # Run role playbook
+  ansible-playbook -i tests/openstack.py tests/test.yml
+  # Run idempotency test
